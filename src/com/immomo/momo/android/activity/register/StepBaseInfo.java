@@ -12,6 +12,11 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import com.immomo.momo.android.BaseDialog;
 import com.immomo.momo.android.R;
 
+/**
+ * 注册步骤基本信息输入页面，继承于抽象的注册页面
+ * @author pj
+ *
+ */
 public class StepBaseInfo extends RegisterStep implements TextWatcher,
 		OnCheckedChangeListener {
 
@@ -47,6 +52,9 @@ public class StepBaseInfo extends RegisterStep implements TextWatcher,
 		mOnNextActionListener.next();
 	}
 
+	/**
+	 * 检查用户名和性别的输入情况
+	 */
 	@Override
 	public boolean validate() {
 		if (isNull(mEtName)) {
@@ -61,6 +69,9 @@ public class StepBaseInfo extends RegisterStep implements TextWatcher,
 		return true;
 	}
 
+	/**
+	 * 判断是否允许修改
+	 */
 	@Override
 	public boolean isChange() {
 		return mIsChange;
@@ -69,6 +80,7 @@ public class StepBaseInfo extends RegisterStep implements TextWatcher,
 	@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		mIsChange = true;
+		//如果mIsGenderAlert为false时弹出对话框，即只有第一次才会弹
 		if (!mIsGenderAlert) {
 			mIsGenderAlert = true;
 			mBaseDialog = BaseDialog.getDialog(mContext, "提示", "注册成功后性别将不可更改",
@@ -81,9 +93,10 @@ public class StepBaseInfo extends RegisterStep implements TextWatcher,
 					});
 			mBaseDialog.show();
 		}
+		
 		switch (checkedId) {
 		case R.id.reg_baseinfo_rb_male:
-			mRbMale.setChecked(true);
+			mRbMale.setChecked(true);//性别已经被设置
 			break;
 
 		case R.id.reg_baseinfo_rb_female:

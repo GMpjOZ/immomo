@@ -32,7 +32,7 @@ import com.immomo.momo.android.view.HeaderLayout.HeaderStyle;
 public class RegisterActivity extends BaseActivity implements OnClickListener,
 		onNextActionListener {
 
-	private HeaderLayout mHeaderLayout;
+	private HeaderLayout mHeaderLayout;//界面标题
 	private ViewFlipper mVfFlipper;
 	private Button mBtnPrevious;
 	private Button mBtnNext;
@@ -127,6 +127,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,
 	}
 
 	/**
+	 * 设置用户头像
 	 * 从子模块向主activity传递数据的回调函数
 	 * @param requestCode 是以便确认返回的数据是从哪个Activity返回的
 	 * @param resultCode 是由子Activity通过其setResult()方法返回
@@ -228,7 +229,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,
 	}
 
 	/**
-	 * 初始化当前注册操作
+	 * 根据步骤初始化当前页面，仅设置标题和左右按钮
 	 * @return
 	 */
 	private RegisterStep initStep() {
