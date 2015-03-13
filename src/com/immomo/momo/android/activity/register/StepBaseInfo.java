@@ -22,6 +22,7 @@ import com.immomo.momo.android.R;
  *
  *
  *
+ *
  */
 public class StepBaseInfo extends RegisterStep implements TextWatcher,
 		OnCheckedChangeListener {
