@@ -16,6 +16,12 @@ import com.immomo.momo.android.R;
  * 注册步骤基本信息输入页面，继承于抽象的注册页面
  * @author pj
  *
+ *
+ *
+ *
+ *
+ *
+ *
  */
 public class StepBaseInfo extends RegisterStep implements TextWatcher,
 		OnCheckedChangeListener {
