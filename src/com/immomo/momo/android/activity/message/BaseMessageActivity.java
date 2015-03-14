@@ -93,6 +93,9 @@ public abstract class BaseMessageActivity extends BaseActivity implements
 
 	protected String mCameraImagePath;
 
+	
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
